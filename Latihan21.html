@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faktorial</title>
+  <script>
+    function factorial() {
+      var num = parseInt(document.getElementById("inputNum").value);
+      
+      function calculateFactorial(n) {
+        if (n === 0) {
+          return 1;
+        } else {
+          return n * calculateFactorial(n - 1);
+        }
+      }
+      
+      var result = calculateFactorial(num);
+      document.getElementById("output").innerHTML = "Faktorial dari " + num + " adalah " + result;
+    }
+  </script>
+</head>
+<body>
+  <h1>Faktorial</h1>
+  
+  <label for="inputNum">Masukkan angka: </label>
+  <input type="number" id="inputNum">
+  <button onclick="factorial()">Hitung</button>
+  
+  <p id="output"></p>
+</body>
+</html>

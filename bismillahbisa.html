@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAKTIKUM SIG BERBASIS WEB</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+
+    <style>
+        .hero-section {
+            height: 100vh;
+            background: url("fotobackground.jpg") no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+        .text-white {
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #5a7d7c;
+            border-color: #5a7d7c;
+        }
+        .btn-primary:hover {
+            background-color: #4a6b6b;
+            border-color: #4a6b6b;
+        }
+        #map {
+            height: 500px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Heading dan Deskripsi -->
+    <div class="hero-section d-flex align-items-center justify-content-center text-center">
+        <div class="container">
+            <h1 class="display-3 text-white fw-bold">PRAKTIKUM SISTEM INFORMASI GEOGRAFIS BERBASIS WEB</h1>
+            <h1 class="text-white lead"><strong><em>Ujian Tengah Semester</em></strong></h1>
+            <h4 class="text-white lead">Praktikum Sistem Informasi Geografis Berbasis Web merupakan mata kuliah pilihan yang ditawarkan oleh Teknik Geodesi UGM. Mata kuliah ini awalnya dibuka pada semester ganjil, namun khusus tahun pelajaran ini dibuka di semester genap. Rangkaian praktikum dimulai dari pengenalan HTML secara umum yang dijelaskan pada minggu kedua. Minggu ketiga dan keempat membahas tentang CSS dan JavaScript. Pada minggu kelima, menurut saya ini paling penting karena sudah masuk ke materi GitHub untuk melakukan pengunggahan tugas. Penutup praktikum sebelum UTS, pada minggu keenam dan minggu terakhir dibahas mengenai pembuatan peta menggunakan LeafletJS. </h4>
+            <a href="https://talithasyahdafaust.wixstudio.com/curriculumvitae" class="btn btn-primary btn-lg mt-3">Curriculum Vitae</a>
+            <a href="https://geodesi.ugm.ac.id/" class="btn btn-primary btn-lg mt-3">Website Teknik Geodesi</a>
+        </div>
+    </div>
+
+    <!-- Pop-up Tugas -->
+    <div class="container text-center my-5">
+        <h2 class="mb-4">My Works</h2>
+        <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMinggu1">Tugas Minggu Kedua</button>
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalMinggu2">Tugas Minggu Ketiga</button>
+            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalMinggu3">Tugas Minggu Keenam</button>
+        </div>
+    </div>
+
+    <!-- Modal Tugas -->
+    <div class="modal fade" id="modalMinggu1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content p-4">
+                <h5 class="modal-title mb-3">Tugas Minggu Kedua</h5>
+                <table class="table table-bordered">
+                    <thead><tr><th>Latihan</th><th>Link</th></tr></thead>
+                    <tbody>
+                        <tr><td>Latihan 1</td><td><a href="latihan1.html">Buka</a></td></tr>
+                        <tr><td>Latihan 2</td><td><a href="latihan2.html">Buka</a></td></tr>
+                        <tr><td>Latihan 3</td><td><a href="latihan3.html">Buka</a></td></tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalMinggu2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content p-4">
+                <h5 class="modal-title mb-3">Tugas Minggu Ketiga</h5>
+                <table class="table table-bordered">
+                    <thead><tr><th>Latihan</th><th>Link</th></tr></thead>
+                    <tbody>
+                        <tr><td>Latihan 1</td><td><a href="latihan21.html">Buka</a></td></tr>
+                        <tr><td>Latihan 2</td><td><a href="latihan22.html">Buka</a></td></tr>
+                        <tr><td>Latihan 3</td><td><a href="latihan23.html">Buka</a></td></tr>
+                        <tr><td>Latihan 4</td><td><a href="latihan24.html">Buka</a></td></tr>
+                        <tr><td>Latihan 5</td><td><a href="latihan25.html">Buka</a></td></tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalMinggu3" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content p-4">
+                <h5 class="modal-title mb-3">Tugas Minggu Keenam</h5>
+                <table class="table table-bordered">
+                    <thead><tr><th>Latihan</th><th>Link</th></tr></thead>
+                    <tbody>
+                        <tr><td>Membuat Leaflet</td><td><a href="bismillahleaflet.html">Buka</a></td></tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Validasi -->
+    <div class="container my-5">
+        <h3 style="color:rgb(4, 60, 27);"><b>Formulir Validasi Pekerjaan Selesai</b></h3>
+        <form>
+            <label for="password">Masukkan Kata Sandi:</label>
+            <input type="password" id="password" name="password">
+            <br>
+            <input type="button" class="btn btn-info mt-2" value="Validasi" onclick="validateForm()">
+        </form>
+    </div>
+
+    <!-- Tabel Identitas -->
+    <table class="table table-bordered w-50 mx-auto mt-4">
+        <tr><th>Nama</th><td>Talitha Syahda Fausta</td></tr>
+        <tr><th>NIM</th><td>22/493155/TK/54004</td></tr>
+    </table>
+
+    <!-- Peta Leaflet -->
+    <div class="container">
+        <h3 class="text-center mt-5 mb-3">PETA LOKASI 5 FAKULTAS DI UGM</h3>
+        <div id="map"></div>
+    </div>
+
+    <!-- Bootstrap & Leaflet JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            if (password === "Selesai") {
+                alert("Pekerjaan telah selesai!");
+            } else {
+                alert("Eror: Kata sandi salah. Pekerjaan belum selesai.");
+            }
+        }
+
+        // Leaflet Map
+        var map = L.map('map').setView([-7.768199, 110.379331], 16);
+
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors, HOT'
+        });
+
+        var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenTopoMap'
+        });
+
+        var kampus = L.layerGroup([
+            L.marker([-7.765415, 110.372790]).bindPopup('<b>Fakultas Teknik<br><img src="teknik.jpg" width="164" height="142"><br>★★★★★ (5/5)<br><br>Fakultas Teknik bersebelahan dengan Rumah Sakit Umum Pusat Sardjito.<br><a href="https://maps.app.goo.gl/RAB7umi7HTx6c5fdA" target="_blank">Lokasi</a>'),
+            L.marker([-7.767663, 110.380443]).bindPopup('<b>Fakultas Kehutanan<br><img src="kehutanan.jpg" width="164" height="142"><br>★★★★★ (5/5)<br><br>Fakultas Kehutanan dekat dengan Gedung Balairung UGM.<br><a href="https://maps.app.goo.gl/pLp52iFueyrSvAT18" target="_blank">Lokasi</a>'),
+            L.marker([-7.767774, 110.386404]).bindPopup('<b>Fakultas Peternakan<br><img src="peternakan.jpeg" width="164" height="142"><br>★★★★★ (5/5) <br><br>Fakultas Peternakan bersebelahan dengan Stadion Pancasila UGM.<br><a href="https://maps.app.goo.gl/nYo9eDDhfATHGQMm7" target="_blank">Lokasi</a>'),
+            L.marker([-7.770870, 110.374554]).bindPopup('<b>Fakultas Kedokteran Gigi<br><img src="kedokterangigi.png" width="164" height="142"><br>★★★★★ (5/5)<br><br>Fakultas Kedokteran Gigi bersebelahan dengan Rumah Sakit Gigi dan Mulut UGM.<br><a href="https://maps.app.goo.gl/p5MbDhwcTK3UBqRR7" target="_blank">Lokasi</a>'),
+            L.marker([-7.772460, 110.380112]).bindPopup('<b>Fakultas Psikologi<br><img src="psikologi.jpg" width="164" height="142"><br>★★★★★ (5/5) <br><br>Fakultas Psikologi sangat dekat dengan Masjid Kampus UGM.<br><a href="https://maps.app.goo.gl/eFXmh9T2c1S7UVFb6" target="_blank">Lokasi</a>'),
+
+        ]).addTo(map);
+
+        var baseMaps = {
+            "OpenStreetMap": osm,
+            "OpenStreetMap.HOT": osmHOT,
+            "OpenTopoMap": openTopoMap
+        };
+
+        var overlayMaps = {
+            "Tempat Favorit": kampus
+        };
+
+        L.control.layers(baseMaps, overlayMaps).addTo(map);
+    </script>
+</body>
+</html>

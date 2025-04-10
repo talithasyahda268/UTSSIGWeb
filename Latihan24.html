@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bilangan Prima</title>
+  <script>
+    function displayPrimes() {
+      var number = document.getElementById("inputNumber").value;
+      var primes = [];
+
+      for (var i = 2; i <= number; i++) {
+        var isPrime = true;
+
+        for (var j = 2; j < i; j++) {
+          if (i % j === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+
+        if (isPrime) {
+          primes.push(i);
+        }
+      }
+
+      document.getElementById("result").innerHTML = "Bilangan prima dari 1 hingga " + number + " adalah: " + primes.join(", ");
+    }
+  </script>
+</head>
+<body>
+  <h1>Bilangan Prima</h1>
+
+  <label for="inputNumber">Masukkan Angka: </label>
+  <input type="number" id="inputNumber">
+  <br><br>
+
+  <button onclick="displayPrimes()">Mulai Hitungan</button>
+
+  <p id="result"></p>
+</body>
+</html>
